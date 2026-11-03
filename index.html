@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<meta name="description" content="Replace with a one-sentence description of you and your work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa; --ink:#161616; --body:#2a2a2a; --muted:#6b6b6b; --line:#e2e2e2; --ph:#dfe4e8;
+  --sans:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Crimson Pro",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121416;--ink:#f2f2f2;--body:#d6d6d6;--muted:#9a9a9a;--line:#2c2f33;--ph:#22272c}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font:400 1.05rem/1.85 var(--sans)}
+a{color:inherit}
+a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+header{max-width:1200px;margin:0 auto;padding:1.5rem clamp(1.25rem,6vw,5rem);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.name{font-weight:600;font-size:1.3rem;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.6rem}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;padding-bottom:2px;border-bottom:1.5px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--ink)}
+
+main{max-width:1200px;margin:0 auto;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,6vw,5rem) 5rem}
+.page{display:none}
+.page.active{display:block}
+
+/* Home */
+.intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,5vw,5rem);align-items:start;max-width:1000px;margin:0 auto}
+.portrait{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:var(--ph)}
+.eyebrow{font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:.25rem 0 1rem}
+h1{font:400 clamp(2.4rem,5vw,3.6rem)/1.1 var(--serif);color:var(--ink);margin:0 0 1.5rem}
+.lead{font-size:1.5rem;line-height:1.5;color:var(--ink);margin:0 0 1.75rem}
+.intro p{margin:0 0 1.5rem}
+
+/* Other pages */
+.narrow{max-width:680px;margin:0 auto}
+h2{font:400 2.4rem/1.15 var(--serif);color:var(--ink);margin:0 0 1.25rem}
+h3{font:600 1rem var(--sans);color:var(--ink);margin:2.5rem 0 .5rem;letter-spacing:.02em}
+.cv-item{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:.6rem 0;border-top:1px solid var(--line)}
+.cv-item .when{color:var(--muted);font-size:.95rem}
+.cv-item strong{color:var(--ink);font-weight:500}
+.btn{display:inline-block;margin-top:1rem;padding:.6rem 1.2rem;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.links{list-style:none;padding:0;margin:1.5rem 0 0}
+.links li{padding:.5rem 0;border-top:1px solid var(--line)}
+
+@media (max-width:800px){
+  .intro{grid-template-columns:1fr}
+  .portrait{max-width:380px}
+  .cv-item{grid-template-columns:1fr;gap:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="name" href="#home" id="siteName">Your Name</a>
+  <nav aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#cv">CV</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page" id="home">
+    <div class="intro">
+      <!-- Put your photo at images/portrait.jpg (tall/portrait crop works best) -->
+      <img class="portrait" src="images/portrait.jpg" alt="Portrait of Your Name"
+           onerror="this.removeAttribute('src');this.alt='';">
+      <div>
+        <p class="eyebrow">Your Field · Your University</p>
+        <h1>Hi, I’m Your Name.</h1>
+        <p class="lead">I’m a PhD candidate in Your Field at Your University, exploring the question that drives your research.</p>
+        <p>Write a paragraph about the methods, data, or tools you use, and what you’re passionate about communicating to others.</p>
+        <p>Looking ahead, say what you hope to work on next.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="contact">
+    <div class="narrow">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email.</p>
+      <ul class="links">
+        <li>Email: <a href="mailto:you@university.edu">you@university.edu</a></li>
+        <li>GitHub: <a href="https://github.com/your-username">github.com/your-username</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/your-username">linkedin.com/in/your-username</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="page" id="cv">
+    <div class="narrow">
+      <h2>CV</h2>
+      <!-- Put your PDF at files/cv.pdf -->
+      <a class="btn" href="files/cv.pdf">Download CV (PDF)</a>
+
+      <h3>Education</h3>
+      <div class="cv-item"><span class="when">2022 – present</span><span><strong>PhD, Your Field</strong><br>Your University</span></div>
+      <div class="cv-item"><span class="when">2018 – 2022</span><span><strong>BS, Your Major</strong><br>Your College</span></div>
+
+      <h3>Research experience</h3>
+      <div class="cv-item"><span class="when">2023</span><span><strong>Research cruise or field campaign</strong><br>Role and location</span></div>
+
+      <h3>Publications</h3>
+      <div class="cv-item"><span class="when">2026</span><span>Author, A., <strong>Your Name</strong> (2026). Paper title. <em>Journal Name</em>.</span></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const pages=[...document.querySelectorAll(".page")];
+function route(){
+  const id=(location.hash||"#home").slice(1);
+  const target=pages.some(p=>p.id===id)?id:"home";
+  pages.forEach(p=>p.classList.toggle("active",p.id===target));
+  document.querySelectorAll("nav a").forEach(a=>{
+    if(a.getAttribute("href")==="#"+target)a.setAttribute("aria-current","page");
+    else a.removeAttribute("aria-current");
+  });
+  window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
